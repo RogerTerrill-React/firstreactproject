@@ -30,12 +30,13 @@ const TableBody = props => {
 
 class Table extends Component {
     render() {
-        const { characterData } = this.props;
+        const { characterData2 } = this.props;
+        console.log(this.props);
 
         return (
             <table>
                 <Tableheader />
-                <TableBody characterData1={characterData} />
+                <TableBody characterData1={characterData2} />
             </table>
         );
     }
