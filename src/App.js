@@ -24,7 +24,7 @@ class App extends Component {
     };
 
     removeCharacter = index => {
-        const { character } = this.state;
+        const { characters } = this.state;
 
         this.setState({
             characters: characters.filter((character, i) => {
@@ -34,6 +34,7 @@ class App extends Component {
     }
 
     render() {
+        const { characters } = this.state;
         return (
             <div className="container">
                 <Table

@@ -14,7 +14,7 @@ const Tableheader = () => {
 }
 
 const TableBody = props => {
-    const rows = props.characterData1.map((row, index) => {
+    const rows = props.characterData.map((row, index) => {
         return (
             <tr key={index}>
                 <td>{row.name}</td>
@@ -31,14 +31,14 @@ const TableBody = props => {
 
 class Table extends Component {
     render() {
-        const { characterData2, removeCharacter } = this.props;
+        const { characterData, removeCharacter } = this.props;
         console.log(this.__proto__); //Table is the object of this and in table there is a property of props
 
         return (
             <table>
                 <Tableheader />
                 <TableBody 
-                    characterData1={characterData2}
+                    characterData={characterData}
                     removeCharacter={removeCharacter}
                  />
             </table>
