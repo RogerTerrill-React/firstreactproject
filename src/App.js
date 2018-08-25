@@ -3,7 +3,7 @@ import Table from './Table';
 
 class App extends Component {
     state = {
-        characters: [
+        characters1: [
             {
                 'name': 'Charlie',
                 'job': 'Janitor'
@@ -24,21 +24,23 @@ class App extends Component {
     };
 
     removeCharacter = index => {
-        const { characters } = this.state;
+        // const { characters1 } = this.state; //This creates const characters1 = this.state.characters1, where this is the App class
+        
+        console.log(this);
 
         this.setState({
-            characters: characters.filter((character, i) => {
-                return i !== index;
+            characters1: characters1.filter((character, i) => { //This changes the state.characters above, the key is the name of the state.character1
+                return i !== index; //This boolean is the condition of what is returned, This is saying return anything that is not the index
             })
         });
     }
 
     render() {
-        const { characters } = this.state;
+        const { characters1 } = this.state;
         return (
             <div className="container">
                 <Table
-                    characterData={characters}
+                    characterData={characters1}
                     removeCharacter={this.removeCharacter}
                 />
             </div>
