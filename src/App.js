@@ -1,30 +1,14 @@
 import React, {Component} from 'react';
 import Table from './Table';
+import Form from './Form';
 
 class App extends Component {
     state = {
-        characters1: [
-            {
-                'name': 'Charlie',
-                'job': 'Janitor'
-            },
-            {
-                'name': 'Mac',
-                'job': 'Bouncer'
-            },
-            {
-                'name': 'Dee',
-                'job': 'Aspring actress'
-            },
-            {
-                'name': 'Dennis',
-                'job': 'Bartender'
-            }
-        ]
+        characters1: []
     };
 
     removeCharacter = index => {
-        // const { characters1 } = this.state; //This creates const characters1 = this.state.characters1, where this is the App class
+        const { characters1 } = this.state; //This creates const characters1 = this.state.characters1, where "this" is the App class
         
         console.log(this);
 
@@ -35,6 +19,10 @@ class App extends Component {
         });
     }
 
+    handleSubmit = character => {
+        this.setState({characters1: [...this.state.characters1, character]});
+    }
+
     render() {
         const { characters1 } = this.state;
         return (
@@ -43,6 +31,7 @@ class App extends Component {
                     characterData={characters1}
                     removeCharacter={this.removeCharacter}
                 />
+                <Form handleSubmit={this.handleSubmit} />
             </div>
         );
     }
