@@ -20,6 +20,9 @@ class App extends Component {
     }
 
     handleSubmit = character => {
+        // var parts = ['shoulders', 'knees']; 
+        // var lyrics = ['head', ...parts, 'and', 'toes']; 
+        // ["head", "shoulders", "knees", "and", "toes"]
         this.setState({characters1: [...this.state.characters1, character]});
     }
 
