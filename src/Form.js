@@ -4,12 +4,12 @@ class Form extends Component {
     constructor(props) {
         super(props);
 
-        this.initalState = {
+        this.initialState = {
             name: '',
             job: ''
         };
 
-        this.state = this.initalState;
+        this.state = this.initialState;
     
     }
 
